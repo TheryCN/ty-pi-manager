@@ -2,6 +2,7 @@ const express = require('express')
 var bodyParser = require('body-parser');
 var fs = require('fs');
 const app = express()
+const { exec } = require('child_process');
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -43,6 +44,6 @@ app.post('/settings/:app', function (req, res) {
   res.send("Settings created !");
 })
 
-app.listen(3000, function () {
-  console.log('Pi Manager listening on port 3000!')
+app.listen(4000, function () {
+  console.log('Pi Manager listening on port 4000!')
 });
