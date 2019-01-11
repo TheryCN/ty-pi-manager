@@ -1,0 +1,18 @@
+.box {
+  background-color: rgb(32, 38, 46);
+  min-width: 200px;
+  width:100%;
+}
+
+.box .box-header {
+  text-align: left;
+  padding: 5px;
+  height: 20px;
+  background-color: rgba(40,44,52, .7);
+  font-size: 12px;
+}
+
+.box .box-content {
+  padding: 10px;
+  background-color: rgba(40,44,52, .3);
+}

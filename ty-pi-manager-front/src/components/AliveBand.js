@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const isAliveStyle = {
   backgroundColor: 'green',
   width: '100%',
-  height: '3px'
+  height: '4px'
 };
 
 const isNotAliveStyle = {

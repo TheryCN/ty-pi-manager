@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 import { notify } from '../actions/notificationActions';
-import ServerActionForm from '../components/ServerActionForm';
 
-const shutdownCall = (dispatch) => {
-  axios.get('/shutdown').then(response => {
-    dispatch(notify("Shutdown..."));
+import SettingsForm from '../components/SettingsForm';
+
+const saveSettingsCall = (dispatch, app, settings) => {
+  axios.post('/settings/'+app, settings).then(response => {
+    dispatch(notify("Settings saved"));
   }).catch(function (error) {
     console.log(error);
     dispatch(notify(error));
@@ -14,15 +15,14 @@ const shutdownCall = (dispatch) => {
 }
 
 const mapStateToProps = state => ({
-  isAlive: state.servers.isAlive,
-  name: 'Shutdown'
+  isAlive: state.servers.isAlive
 })
 
 const mapDispatchToProps = dispatch => ({
-  serverActionHandler: () => shutdownCall(dispatch)
+  saveSettingsHandler: (app, settings) => saveSettingsCall(dispatch, app, settings)
 })
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ServerActionForm);
+)(SettingsForm);
