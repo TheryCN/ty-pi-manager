@@ -18,10 +18,12 @@ const shutdownCall = (dispatch) => {
 const aliveCheckCallUntilStop = (dispatch) => {
   axios.get('/status').then(response => {
     dispatch(aliveCheck(true));
+    dispatch(notify("Shutdown in progress"));
     setTimeout(function () {
         aliveCheckCallUntilStop(dispatch);
     }, 5000);
   }).catch(function (error) {
+    dispatch(notify("Shutdown done"));
     dispatch(aliveCheck(false));
   });
 }

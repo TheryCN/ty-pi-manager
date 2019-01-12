@@ -17,9 +17,11 @@ const restartCall = (dispatch) => {
 
 const aliveCheckCallUntilRestart = (dispatch) => {
   axios.get('/status').then(response => {
+    dispatch(notify("Restart done"));
     dispatch(aliveCheck(true));
   }).catch(function (error) {
     dispatch(aliveCheck(false));
+    dispatch(notify("Restart in progress"));
     setTimeout(function () {
         aliveCheckCallUntilRestart(dispatch);
     }, 5000);
