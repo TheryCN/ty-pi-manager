@@ -1,0 +1,10 @@
+[Unit]
+Description=Pi Manager Service
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=NODE_ENV=production node /home/pi/Documents/GitHub/ty-pi-manager/app.js
+
+[Install]
+WantedBy=multi-user.target
