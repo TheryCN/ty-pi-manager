@@ -10,7 +10,6 @@ class Notification extends Component {
   };
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log("Why?", this.props.message, prevProps.message)
     if(this.props.message !== undefined && this.props.message !== prevProps.message) {
       this.setState({ ...this.state, open: true });
     }
