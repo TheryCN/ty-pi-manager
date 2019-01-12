@@ -4,7 +4,7 @@ import Notification from '../components/Notification';
 import { clearNotification } from '../actions/notificationActions';
 
 const mapStateToProps = state => ({
-  message: state.notifications.message
+  messages: state.notifications.messages
 })
 
 const mapDispatchToProps = dispatch => ({

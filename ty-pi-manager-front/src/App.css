@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   font-family: Roboto;
 }
 
@@ -8,4 +7,8 @@
   min-height: calc(100vh - 4px);
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.center {
+  text-align: center;
 }

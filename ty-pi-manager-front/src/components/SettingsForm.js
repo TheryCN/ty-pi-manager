@@ -38,7 +38,7 @@ class SettingsForm extends Component {
           />
         </div>
 
-        <div>
+        <div style={{textAlign: 'center'}}>
           <Button variant="contained" disabled={!this.props.isAlive}
             onClick={() => this.props.saveSettingsHandler(this.state.app, JSON.parse(this.state.settings))}>
             Save

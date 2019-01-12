@@ -23,18 +23,22 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-        <Notification />
         <div className="App">
           <AliveBand />
           <div className="App-content" style={backgroundStyle}>
             <Grid container>
-              <Grid item xs={2}>
+              <Grid item xs={2} className="center">
                 <Box name="Basic commands">
                   <Shutdown />
                   <Restart />
                 </Box>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={5}>
+                <Box name="Notifications">
+                  <Notification />
+                </Box>
+              </Grid>
+              <Grid item xs={5}>
                 <Box name="App Settings">
                   <SettingsForm />
                 </Box>

@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
 app.get('/shutdown', function(req, res) {
   res.writeHead(200);
   child = exec("shutdown -h now", function (error, stdout, stderr) {
-    res.end("Shutdown !");
+    res.end("Shutdown OK");
   });
   res.write('Shutdown...');
 });
@@ -22,7 +22,7 @@ app.get('/shutdown', function(req, res) {
 app.get('/restart', function(req, res) {
   res.writeHead(200);
   child = exec("reboot", function (error, stdout, stderr) {
-    res.end("Reboot !");
+    res.end("Reboot OK");
   });
   res.write('Reboot...');
 });

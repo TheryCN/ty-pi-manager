@@ -1,37 +1,16 @@
 import React, { Component } from 'react';
-import Snackbar from '@material-ui/core/Snackbar';
+import Typography from '@material-ui/core/Typography';
+
+import './Notification.css';
 
 class Notification extends Component {
 
-  state = {
-    open: false,
-    vertical: 'top',
-    horizontal: 'right',
-  };
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if(this.props.message !== undefined && this.props.message !== prevProps.message) {
-      this.setState({ ...this.state, open: true });
-    }
-  }
-
-  handleClose = () => {
-    this.setState({ open: false });
-    this.props.clearNotification();
-  };
-
   render() {
-    const { vertical, horizontal, open } = this.state;
+    const messages = this.props.messages.map((message, id) => <Typography key={id}>{message}</Typography>);
     return (
-      <Snackbar
-        anchorOrigin={{ vertical, horizontal }}
-        open={open}
-        onClose={this.handleClose}
-        ContentProps={{
-          'aria-describedby': 'message-id',
-        }}
-        message={<span id="message-id">{this.props.message}</span>}
-      />
+      <div className="notification">
+        {messages}
+      </div>
     );
   }
 }

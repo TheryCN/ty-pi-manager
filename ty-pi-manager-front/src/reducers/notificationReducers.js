@@ -1,12 +1,14 @@
 import { NOTIFY, CLEAR_NOTIFICATION } from '../actions/types';
 
-const notifications = (state = {message: undefined}, action) => {
+const notifications = (state = {messages: ['Commencing System Check', 'All Systems Green']}, action) => {
   switch (action.type) {
     case NOTIFY:
-      console.log(action.message);
-      return Object.assign({}, state, {message: action.message});
+      let messages = [];
+      messages = messages.concat(state.messages);
+      messages.push(action.message);
+      return Object.assign({}, state, {messages: messages});
     case CLEAR_NOTIFICATION:
-      return Object.assign({}, state, {message: undefined});
+      return Object.assign({}, state, {messages: undefined});
     default:
       return state;
   }
