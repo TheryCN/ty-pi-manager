@@ -6,7 +6,7 @@ class SettingsForm extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { app: "", settings : "{}" }
+    this.state = { app: "", settings : "" }
   }
 
   handleChange = name => event => {
