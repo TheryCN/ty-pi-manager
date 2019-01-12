@@ -28,7 +28,7 @@ class App extends Component {
             <div className="header" />
           </div>
           <div className="App-content" style={backgroundStyle}>
-            <div className="app-title">SETTINGS</div>
+            <div className="app-title">COMMAND CENTER</div>
             <Grid container>
               <Grid item xs={12} md={2}>
                 <Shutdown />
