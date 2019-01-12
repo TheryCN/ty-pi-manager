@@ -13,7 +13,7 @@
 }
 
 .app-title {
-  letter-spacing: 5px;
+  letter-spacing: 10px;
   padding: 20px;
   font-size: calc(30px + 2vmin);
   color: rgb(74, 71, 62);
