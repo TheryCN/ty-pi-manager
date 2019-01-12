@@ -20,6 +20,7 @@ class SettingsForm extends Component {
           <TextField
             label="Application"
             value={this.state.app}
+            fullWidth={true}
             onChange={this.handleChange('app')}
             margin="normal"
           />
@@ -31,6 +32,7 @@ class SettingsForm extends Component {
             multiline
             rows="10"
             value={this.state.settings}
+            fullWidth={true}
             onChange={this.handleChange('settings')}
             margin="normal"
           />
