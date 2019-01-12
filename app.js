@@ -1,14 +1,16 @@
 const express = require('express')
 var bodyParser = require('body-parser');
+const path = require('path');
 var fs = require('fs');
 const app = express()
+const port = process.env.PORT || 4000;
 const { exec } = require('child_process');
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
+app.get('/status', function (req, res) {
+  res.send('OK')
 });
 
 app.get('/shutdown', function(req, res) {
@@ -44,6 +46,15 @@ app.post('/settings/:app', function (req, res) {
   res.send("Settings created !");
 })
 
-app.listen(4000, function () {
-  console.log('Pi Manager listening on port 4000!')
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'ty-pi-manager-front/build')));
+  // Handle React routing, return all requests to React app
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'ty-pi-manager-front/build', 'index.html'));
+  });
+}
+
+app.listen(port, function () {
+  console.log('Pi Manager listening on port ' + port + '!')
 });

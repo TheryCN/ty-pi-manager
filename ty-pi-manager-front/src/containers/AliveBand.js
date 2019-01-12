@@ -5,7 +5,7 @@ import AliveBand from '../components/AliveBand';
 import { aliveCheck } from '../actions/serverActions';
 
 const aliveCheckCall = (dispatch) => {
-  axios.get('/').then(response => {
+  axios.get('/status').then(response => {
     dispatch(aliveCheck(true));
   }).catch(function (error) {
     console.log(error);

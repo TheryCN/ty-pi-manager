@@ -16,7 +16,7 @@ const shutdownCall = (dispatch) => {
 }
 
 const aliveCheckCallUntilStop = (dispatch) => {
-  axios.get('/').then(response => {
+  axios.get('/status').then(response => {
     dispatch(aliveCheck(true));
     setTimeout(function () {
         aliveCheckCallUntilStop(dispatch);

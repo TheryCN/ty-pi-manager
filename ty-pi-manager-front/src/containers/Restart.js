@@ -16,7 +16,7 @@ const restartCall = (dispatch) => {
 }
 
 const aliveCheckCallUntilRestart = (dispatch) => {
-  axios.get('/').then(response => {
+  axios.get('/status').then(response => {
     dispatch(aliveCheck(true));
   }).catch(function (error) {
     dispatch(aliveCheck(false));
