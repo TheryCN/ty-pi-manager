@@ -32,7 +32,7 @@ curl -X POST \
 }'
 */
 app.post('/settings/:app', function (req, res) {
-  let dir = './app/';
+  let dir = path.join(__dirname, '/app/');
   if (!fs.existsSync(dir)){
       fs.mkdirSync(dir);
   }
