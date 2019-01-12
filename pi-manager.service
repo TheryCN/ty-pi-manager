@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 Type=idle
-ExecStart=node /home/pi/Documents/GitHub/ty-pi-manager/app.js
+ExecStart=/usr/local/bin/node /home/pi/Documents/GitHub/ty-pi-manager/app.js
 Environment=NODE_ENV=production
 
 [Install]
