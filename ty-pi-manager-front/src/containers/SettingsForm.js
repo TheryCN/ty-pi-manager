@@ -10,7 +10,7 @@ const saveSettingsCall = (dispatch, app, settings) => {
     dispatch(notify("Settings saved"));
   }).catch(function (error) {
     console.log(error);
-    dispatch(notify(error));
+    dispatch(notify(JSON.stringify(error)));
   });
 }
 

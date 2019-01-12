@@ -1,5 +1,8 @@
+.box-parent {
+  padding: 32px;
+}
+
 .box {
-  background-color: rgb(32, 38, 46);
   min-width: 200px;
   width:100%;
 }
@@ -7,12 +10,14 @@
 .box .box-header {
   text-align: left;
   padding: 5px;
+  padding-left: 15px;
   height: 20px;
-  background-color: rgba(40,44,52, .7);
-  font-size: 12px;
+  background-color: rgba(73, 67, 59, .8);
+  font-size: 18px;
+  color: rgb(192, 187, 164);
 }
 
 .box .box-content {
   padding: 10px;
-  background-color: rgba(40,44,52, .3);
+  background-color: rgba(215, 208, 185, .8);
 }
