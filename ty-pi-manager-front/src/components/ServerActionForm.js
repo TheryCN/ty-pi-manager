@@ -6,10 +6,10 @@ class ServerActionForm extends Component {
 
   render() {
     return (
-      <div className="button">
-        <Button variant="contained" disabled={!this.props.isAlive} onClick={() => this.props.serverActionHandler()}>
+      <div className="button-container">
+        <div className="button" variant="contained" disabled={!this.props.isAlive} onClick={() => this.props.serverActionHandler()}>
           {this.props.name}
-        </Button>
+        </div>
       </div>
     );
   }

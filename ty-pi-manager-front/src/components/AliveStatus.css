@@ -1,7 +1,8 @@
 .alive {
   float: right;
   color: rgb(10,255,10);
-  margin: 80px;
+  margin-right: 80px;
+  margin-top: 80px;
 }
 
 .alive-rounded {

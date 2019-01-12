@@ -6,7 +6,6 @@
 
 .App-content {
   min-height: calc(100vh - 94px);
-  font-size: calc(10px + 2vmin);
 }
 
 .center {

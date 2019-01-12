@@ -30,18 +30,16 @@ class App extends Component {
           <div className="App-content" style={backgroundStyle}>
             <div className="app-title">SETTINGS</div>
             <Grid container>
-              <Grid item xs={2} className="center">
-                <Box name="Basic commands">
-                  <Shutdown />
-                  <Restart />
-                </Box>
+              <Grid item xs={12} md={2}>
+                <Shutdown />
+                <Restart />
               </Grid>
-              <Grid item xs={5}>
+              <Grid item xs={12} md={5}>
                 <Box name="Notifications">
                   <Notification />
                 </Box>
               </Grid>
-              <Grid item xs={5}>
+              <Grid item xs={12} md={5}>
                 <Box name="App Settings">
                   <SettingsForm />
                 </Box>

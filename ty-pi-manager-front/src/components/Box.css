@@ -1,5 +1,7 @@
 .box-parent {
-  padding: 32px;
+  padding: 15px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .box {
