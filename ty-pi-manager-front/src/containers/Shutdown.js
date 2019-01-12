@@ -21,7 +21,7 @@ const aliveCheckCallUntilStop = (dispatch) => {
       dispatch(notify("Shutdown in progress"));
           aliveCheckCallUntilStop(dispatch);
     }).catch(function (error) {
-      dispatch(notify("Shutdown done"));
+      dispatch(notify("All Systems Red"));
       dispatch(aliveCheck(false));
     });
   }, 5000);

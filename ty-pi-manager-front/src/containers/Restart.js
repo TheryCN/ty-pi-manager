@@ -21,7 +21,7 @@ const aliveCheckCallUntilRestart = (dispatch) => {
       dispatch(aliveCheck(true));
     }).catch(function (error) {
       dispatch(aliveCheck(false));
-      dispatch(notify("Restart in progress"));
+      dispatch(notify("All Systems Green"));
           aliveCheckCallUntilRestart(dispatch);
     });
   }, 5000);
