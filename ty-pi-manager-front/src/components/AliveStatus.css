@@ -1,0 +1,11 @@
+.alive {
+  float: right;
+  color: rgb(10,255,10);
+  margin: 80px;
+}
+
+.alive-rounded {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { aliveCheck } from '../actions/serverActions';
-import AliveBand from '../components/AliveBand';
+import AliveStatus from '../components/AliveStatus';
 
 const mapStateToProps = state => ({
   isAlive: state.servers.isAlive
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AliveBand);
+)(AliveStatus);

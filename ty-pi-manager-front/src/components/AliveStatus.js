@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
+import './AliveStatus.css';
 
 const isAliveStyle = {
-  backgroundColor: 'green',
-  width: '100%',
-  height: '4px'
+  backgroundColor: 'green'
 };
 
 const isNotAliveStyle = {
-  backgroundColor: 'red',
-  width: '100%',
-  height: '3px'
+  backgroundColor: 'red'
 };
 
 class AliveBand extends Component {
@@ -21,7 +18,9 @@ class AliveBand extends Component {
   render() {
     let style = this.props.isAlive ? isAliveStyle : isNotAliveStyle;
     return (
-      <div style={style}>
+      <div className="alive">
+        <div className="alive-rounded" style={style}>
+        </div>
       </div>
     );
   }

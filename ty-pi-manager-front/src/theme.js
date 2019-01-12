@@ -6,5 +6,7 @@ export default createMuiTheme({
   },
   typography: {
     useNextVariants: true,
+    fontFamily: 'Roboto',
+    fontSize: 14
   }
 });

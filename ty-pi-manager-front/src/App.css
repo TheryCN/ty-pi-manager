@@ -1,14 +1,42 @@
 .App {
   font-family: Roboto;
+  letter-spacing: 2px;
+  background-color: rgb(202, 195, 171);
 }
 
 .App-content {
-  background-color: #282c34;
-  min-height: calc(100vh - 4px);
+  min-height: calc(100vh - 94px);
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .center {
   text-align: center;
+}
+
+.app-title {
+  letter-spacing: 5px;
+  padding: 20px;
+  font-size: calc(30px + 2vmin);
+  color: rgb(74, 71, 62);
+  text-shadow: 7px 7px rgba(74, 71, 62, .2);
+}
+
+.header-container {
+  padding-top: 20px;
+}
+
+.header {
+  background-image: url('./images/nier_automata_band.png');
+  background-repeat: repeat;
+  height: 27px;
+}
+
+.bottom-container {
+  padding-bottom: 20px;
+}
+
+.bottom {
+  background-image: url('./images/nier_automata_band_bottom.png');
+  background-repeat: repeat;
+  height: 27px;
 }

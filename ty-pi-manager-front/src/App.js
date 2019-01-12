@@ -8,15 +8,14 @@ import Background from './images/nier_automata_min_color_back.png';
 
 import Box from './components/Box';
 import Notification from './containers/Notification';
-import AliveBand from './containers/AliveBand';
+import AliveStatus from './containers/AliveStatus';
 import Shutdown from './containers/Shutdown';
 import Restart from './containers/Restart';
 import SettingsForm from './containers/SettingsForm';
 
 const backgroundStyle = {
   background: 'url(' + Background + ') no-repeat fixed center',
-  backgroundSize: 'contain',
-  backgroundColor: 'rgb(202, 195, 171)'
+  backgroundSize: 'contain'
 };
 
 class App extends Component {
@@ -24,8 +23,12 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <div className="App">
-          <AliveBand />
+          <AliveStatus />
+          <div className="header-container">
+            <div className="header" />
+          </div>
           <div className="App-content" style={backgroundStyle}>
+            <div className="app-title">SETTINGS</div>
             <Grid container>
               <Grid item xs={2} className="center">
                 <Box name="Basic commands">
@@ -44,6 +47,9 @@ class App extends Component {
                 </Box>
               </Grid>
             </Grid>
+          </div>
+          <div className="bottom-container">
+            <div className="bottom" />
           </div>
         </div>
       </MuiThemeProvider>
