@@ -14,19 +14,13 @@ app.get('/status', function (req, res) {
 });
 
 app.get('/shutdown', function(req, res) {
-  res.writeHead(200);
-  child = exec("shutdown -h now", function (error, stdout, stderr) {
-    res.end("Shutdown OK");
-  });
-  res.write('Shutdown...');
+  child = exec("sleep 5s && shutdown -h now");
+  res.send('Shutdown...');
 });
 
 app.get('/restart', function(req, res) {
-  res.writeHead(200);
-  child = exec("reboot", function (error, stdout, stderr) {
-    res.end("Reboot OK");
-  });
-  res.write('Reboot...');
+  child = exec("sleep 5s && reboot");
+  res.send('Reboot...');
 });
 
 /**

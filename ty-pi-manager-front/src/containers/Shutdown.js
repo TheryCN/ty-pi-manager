@@ -10,22 +10,21 @@ const shutdownCall = (dispatch) => {
     dispatch(notify("Shutdown..."));
     aliveCheckCallUntilStop(dispatch);
   }).catch(function (error) {
-    console.log(error);
     dispatch(notify(error));
   });
 }
 
 const aliveCheckCallUntilStop = (dispatch) => {
-  axios.get('/status').then(response => {
-    dispatch(aliveCheck(true));
-    dispatch(notify("Shutdown in progress"));
-    setTimeout(function () {
-        aliveCheckCallUntilStop(dispatch);
-    }, 5000);
-  }).catch(function (error) {
-    dispatch(notify("Shutdown done"));
-    dispatch(aliveCheck(false));
-  });
+  setTimeout(function () {
+    axios.get('/status').then(response => {
+      dispatch(aliveCheck(true));
+      dispatch(notify("Shutdown in progress"));
+          aliveCheckCallUntilStop(dispatch);
+    }).catch(function (error) {
+      dispatch(notify("Shutdown done"));
+      dispatch(aliveCheck(false));
+    });
+  }, 5000);
 }
 
 const mapStateToProps = state => ({

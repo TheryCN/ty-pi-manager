@@ -10,22 +10,21 @@ const restartCall = (dispatch) => {
     dispatch(notify("Restart..."));
     aliveCheckCallUntilRestart(dispatch);
   }).catch(function (error) {
-    console.log(error);
     dispatch(notify(error));
   });
 }
 
 const aliveCheckCallUntilRestart = (dispatch) => {
-  axios.get('/status').then(response => {
-    dispatch(notify("Restart done"));
-    dispatch(aliveCheck(true));
-  }).catch(function (error) {
-    dispatch(aliveCheck(false));
-    dispatch(notify("Restart in progress"));
-    setTimeout(function () {
-        aliveCheckCallUntilRestart(dispatch);
-    }, 5000);
-  });
+  setTimeout(function () {
+    axios.get('/status').then(response => {
+      dispatch(notify("Restart done"));
+      dispatch(aliveCheck(true));
+    }).catch(function (error) {
+      dispatch(aliveCheck(false));
+      dispatch(notify("Restart in progress"));
+          aliveCheckCallUntilRestart(dispatch);
+    });
+  }, 5000);
 }
 
 const mapStateToProps = state => ({
