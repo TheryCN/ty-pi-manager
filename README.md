@@ -1,8 +1,11 @@
+# ty-pi-manager-front
+
+npm install
+npm start
+npm run build
+
 # ty-pi-manager
 
-Dependencies: npm run install-all
-
-Development back: npm app.js
-Development front: npm start
-
-Production: NODE_ENV=production node app.js
+npm install
+node app.js
+NODE_ENV=production node app.js
