@@ -14,12 +14,12 @@ app.get('/status', function (req, res) {
 });
 
 app.get('/shutdown', function(req, res) {
-  child = exec("sleep 5s && shutdown -h now");
+  child = exec("sleep 2s && shutdown -h now");
   res.send('Shutdown...');
 });
 
 app.get('/restart', function(req, res) {
-  child = exec("sleep 5s && reboot");
+  child = exec("sleep 2s && reboot");
   res.send('Reboot...');
 });
 
