@@ -5,7 +5,6 @@ import './Notification.css';
 
 class Notification extends Component {
 
-
   componentDidMount() {
     this.scrollToBottom();
   }
@@ -17,7 +16,7 @@ class Notification extends Component {
   scrollToBottom = () => {
     this.afterNotifications.scrollIntoView({ behavior: "smooth" });
   }
-  
+
   render() {
     const messages = this.props.messages.map((message, id) => <Typography key={id}>{message}</Typography>);
     return (

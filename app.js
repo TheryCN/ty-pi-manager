@@ -13,6 +13,7 @@ app.get('/status', function (req, res) {
   res.send('OK')
 });
 
+// Sleep 2s before shutdown or reboot to let the server respond.
 app.get('/shutdown', function(req, res) {
   child = exec("sleep 2s && shutdown -h now");
   res.send('Shutdown...');
@@ -24,6 +25,7 @@ app.get('/restart', function(req, res) {
 });
 
 /**
+Create a JSON configuration file on the server for other applications.
 curl -X POST \
   http://localhost:3000/settings/luminosity \
   -H 'Content-Type: application/json' \
