@@ -24,6 +24,12 @@ app.get('/restart', function(req, res) {
   res.send('Reboot...');
 });
 
+app.get('/send/:command', function(req, res) {
+  child = exec(req.params.command, function (error, stdout, stderr) {
+    res.send({ stdout: stdout, stderr: stderr });
+  });
+});
+
 /**
 Create a JSON configuration file on the server for other applications.
 curl -X POST \
@@ -34,11 +40,11 @@ curl -X POST \
 }'
 */
 app.post('/settings/:app', function (req, res) {
-  let dir = path.join(__dirname, '/app/');
+  let dir = path.join(__dirname, '../' + req.params.app + "/");
   if (!fs.existsSync(dir)){
       fs.mkdirSync(dir);
   }
-  fs.writeFileSync(dir + req.params.app + '.json', JSON.stringify(req.body), 'utf8');
+  fs.writeFileSync(dir + 'config.json', JSON.stringify(req.body), 'utf8');
   res.send("Settings created !");
 })
 
